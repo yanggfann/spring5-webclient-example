@@ -7,6 +7,10 @@ This repo is used to show how to use wiremock.
 
 Refer to: https://www.baeldung.com/spring-mocking-webclient
 
+### Write Integration Test With MockWebServer
+
+Refer to: https://www.baeldung.com/spring-mocking-webclient
+
 ## Reference Links
 
 ### Init Repo
@@ -35,3 +39,6 @@ If you are confused about what a Maven repository is, you can get an answer from
 
 Base on the document of Gradle document, the compile have been removed from Gradle 7.0, it recommend to use implementation, here are the details: [gradle document](https://docs.gradle.org/current/userguide/java_library_plugin.html#sec:java_library_separation)
 
+### Spring5 Webclient
+
+[WebClient](https://www.baeldung.com/spring-5-webclient) is an interface representing the main entry point for performing web requests.

@@ -1,3 +1,5 @@
 school:
   base:
     url:
+  studentcount:
+    endpoint:

@@ -31,11 +31,11 @@ class SchoolServiceUnitTest {
 
   @BeforeEach
   void setup() {
-    schoolService = new SchoolService(webClientMock);
+    schoolService = new SchoolService(webClientMock, "/count");
   }
 
   @Test
-  void givenEmployeeId_whenGetEmployeeById_thenReturnEmployee() {
+  void shouldReturnSchoolSuccessfully() {
     int studentCount = 3;
     School school = new School(studentCount);
     when(webClientMock.get())

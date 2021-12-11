@@ -13,7 +13,7 @@ public class SchoolController {
   private final SchoolService schoolService;
 
   @GetMapping("/count")
-  public Mono<School> getStudentCount() {
+  public Mono<School> getSchool() {
     return schoolService.getSchool();
   }
 }
