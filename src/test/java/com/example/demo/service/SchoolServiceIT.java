@@ -3,7 +3,6 @@ package com.example.demo.service;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.example.demo.model.School;
-import com.example.demo.service.SchoolService;
 import java.io.IOException;
 import java.util.Objects;
 import okhttp3.mockwebserver.MockResponse;

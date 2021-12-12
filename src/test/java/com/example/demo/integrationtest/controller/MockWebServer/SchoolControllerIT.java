@@ -1,6 +1,6 @@
 package com.example.demo.integrationtest.controller.MockWebServer;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.example.demo.controller.SchoolController;
 import com.example.demo.model.School;
