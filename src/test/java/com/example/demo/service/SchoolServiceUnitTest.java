@@ -31,7 +31,7 @@ class SchoolServiceUnitTest {
 
   @BeforeEach
   void setup() {
-    schoolService = new SchoolService(webClientMock, "/count");
+    schoolService = new SchoolService(webClientMock, "/studentCount");
   }
 
   @Test
@@ -40,7 +40,7 @@ class SchoolServiceUnitTest {
     School school = new School(studentCount);
     when(webClientMock.get())
         .thenReturn(requestHeadersUriMock);
-    when(requestHeadersUriMock.uri("/count"))
+    when(requestHeadersUriMock.uri("/studentCount"))
         .thenReturn(requestHeadersMock);
     when(requestHeadersMock.retrieve())
         .thenReturn(responseMock);

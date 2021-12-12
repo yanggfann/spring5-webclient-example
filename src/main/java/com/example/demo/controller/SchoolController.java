@@ -12,7 +12,7 @@ import reactor.core.publisher.Mono;
 public class SchoolController {
   private final SchoolService schoolService;
 
-  @GetMapping("/count")
+  @GetMapping("/school")
   public Mono<School> getSchool() {
     return schoolService.getSchool();
   }

@@ -38,7 +38,7 @@ class SchoolControllerIT {
   @BeforeEach
   void setup() {
     WebClient webClient = WebClient.builder().build();
-    baseUrl = String.format("http://localhost:%s/count", mockBackEnd.getPort());
+    baseUrl = String.format("http://localhost:%s/studentCount", mockBackEnd.getPort());
     schoolService = new SchoolService(webClient, baseUrl);
     schoolController = new SchoolController(schoolService);
   }

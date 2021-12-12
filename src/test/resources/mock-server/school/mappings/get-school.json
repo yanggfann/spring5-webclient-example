@@ -1,0 +1,32 @@
+{
+  "mappings": [
+    {
+      "scenarioName": "school",
+      "requiredScenarioState": "Started",
+      "newScenarioState": "return not jason value",
+      "request": {
+        "method": "GET",
+        "urlPath": "/studentCount"
+      },
+      "response": {
+        "status": 200,
+        "bodyFileName": "get-school-is-valid.json",
+        "headers": {
+          "content-type": "application/json"
+        }
+      }
+    },
+    {
+      "scenarioName": "school",
+      "requiredScenarioState": "return not jason value",
+      "request": {
+        "method": "GET",
+        "urlPath": "/studentCount"
+      },
+      "response": {
+        "status": 200,
+        "body": "aaa"
+      }
+    }
+  ]
+}

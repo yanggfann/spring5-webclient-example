@@ -11,6 +11,22 @@ Refer to: https://www.baeldung.com/spring-mocking-webclient
 
 Refer to: https://www.baeldung.com/spring-mocking-webclient
 
+### Write Integration Test With WireMock
+
+#### What is WireMock?
+
+Mock your APIs for fast, robust and comprehensive testing.
+
+WireMock is a simulator for HTTP-based APIs. Some might consider it a **service virtualization** tool or a **mock server**.
+
+It enables you to **stay productive** when an API you depend on **doesn’t exist** or isn’t complete. It supports the testing of **edge cases and failure modes** that the real API won’t reliably produce. And because it’s fast it can **reduce your build time** from hours down to minutes.
+
+Refer to: http://wiremock.org/docs/getting-started/
+
+- Stubbing: http://wiremock.org/docs/stubbing/
+- Json: http://wiremock.org/docs/stubbing/
+- Stateful Behaviour: http://wiremock.org/docs/stateful-behaviour/
+
 ## Reference Links
 
 ### Init Repo

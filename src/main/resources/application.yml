@@ -3,3 +3,5 @@ school:
     url:
   studentcount:
     endpoint:
+  teacher:
+    endpoint:

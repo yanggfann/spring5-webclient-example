@@ -1,0 +1,13 @@
+{
+  "request": {
+    "method": "GET",
+    "urlPath": "/teacher/1"
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "get-teacher-is-valid.json",
+    "headers": {
+      "content-type": "application/json"
+    }
+  }
+}
