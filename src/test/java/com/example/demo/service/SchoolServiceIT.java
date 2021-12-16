@@ -15,8 +15,10 @@ import org.junit.jupiter.api.Test;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.reactive.function.client.WebClient;
 import org.springframework.web.reactive.function.client.WebClientResponseException;
+import reactor.test.StepVerifier;
 
 class SchoolServiceIT {
+
   public static MockWebServer mockBackEnd;
   private static String baseUrl;
   private SchoolService schoolService;
@@ -40,7 +42,7 @@ class SchoolServiceIT {
   }
 
   @Test
-  public void shouldSuccessWhenCallSchoolSuccess() {
+  public void shouldSuccessWhenCallSchoolSuccess_withJupiter() {
     String fakeBody2 = """
         {
             "studentCount": 2
@@ -55,7 +57,21 @@ class SchoolServiceIT {
   }
 
   @Test
-  public void shouldThrowExceptionWhenCallSchoolReturn4xx() {
+  public void shouldSuccessWhenCallSchoolSuccess_withReactorTest() {
+    String fakeBody2 = """
+        {
+            "studentCount": 2
+        }
+        """;
+    mockBackEnd.enqueue(new MockResponse().setHeader("Content-Type", "application/json")
+        .setChunkedBody(fakeBody2, 2).setResponseCode(200));
+
+    School school = new School(2);
+    StepVerifier.create(schoolService.getSchool()).expectNext(school).verifyComplete();
+  }
+
+  @Test
+  public void shouldThrowExceptionWhenCallSchoolReturn4xx_withJupiter() {
     int badRequestCode = HttpStatus.BAD_REQUEST.value();
     mockBackEnd.enqueue(new MockResponse().setResponseCode(badRequestCode));
 
@@ -64,6 +80,15 @@ class SchoolServiceIT {
             WebClientResponseException.class, () -> schoolService.getSchool().block());
     Assertions.assertEquals(
         String.format("400 Bad Request from GET %s", baseUrl), exception.getMessage());
+  }
+
+  @Test
+  public void shouldThrowExceptionWhenCallSchoolReturn4xx_withReactorTest() {
+    int badRequestCode = HttpStatus.BAD_REQUEST.value();
+    mockBackEnd.enqueue(new MockResponse().setResponseCode(badRequestCode));
+
+    StepVerifier.create(schoolService.getSchool())
+        .expectErrorMessage(String.format("400 Bad Request from GET %s", baseUrl)).verify();
   }
 
   @Test
