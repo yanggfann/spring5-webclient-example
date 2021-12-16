@@ -83,6 +83,9 @@ WireMock Guide Tutorials: http://wiremock.org/docs/getting-started/
   For example: `com.example.demo.integrationtest.controller.WireMock.TeacherControllerITByJson`
 - Stateful Behaviour: http://wiremock.org/docs/stateful-behaviour/
   For example: `com.example.demo.integrationtest.controller.WireMock.TeacherControllerITByStatefulBehaviour`
+  Basically stateful behavior is always used when we call the same endpoint multiple times in a method.
+
+Both `stubFor` and `json` file can mock a response for webclient. But `stubFor` is better than `json` file, because we can directly know what is the response for the current test method.
 
 ## Reference Links
 

@@ -12,15 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.reactive.server.WebTestClient;
 
-@TestMethodOrder(OrderAnnotation.class)
 class SchoolControllerITByStatefulBehaviour extends IntegrationTestBase {
 
   @Autowired
   private WebTestClient webTestClient;
 
   @Test
-  @Order(1)
-  public void shouldSuccessfullyGetSchoolWhenAddJsonPropertyForField() {
+  public void testStatefulBehaviourInOneTest() {
     webTestClient
         .get()
         .uri("/school")
@@ -30,11 +28,6 @@ class SchoolControllerITByStatefulBehaviour extends IntegrationTestBase {
         .is2xxSuccessful()
         .expectBody(School.class)
         .value(school -> assertThat(school.getStudentCount()).isEqualTo(5));
-  }
-
-  @Test
-  @Order(2)
-  public void shouldThrowExceptionWhenBodyIsNotJson() {
     webTestClient
         .get()
         .uri("/school")
